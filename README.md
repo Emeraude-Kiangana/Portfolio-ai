@@ -50,7 +50,7 @@ The production build is configured as a static export.
 `next.config.ts` uses:
 
 - `output: "export"`
-- `basePath: "/Portfolio-ai"`
+- `basePath: "/open-technologies-portfolio"`
 - trailing slashes for static hosting
 
 Deployment is automated through GitHub Actions and GitHub Pages.
