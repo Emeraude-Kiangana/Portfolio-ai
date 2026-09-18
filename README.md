@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Emeraude Kiangana — Open Technologies Portfolio
 
-## Getting Started
+Public evidence portfolio for technology projects, experiments and reproducible engineering work.
 
-First, run the development server:
+## Purpose
+
+This repository is the **presentation layer** for verified work. It is designed to show what was built, tested, documented and demonstrated, with links back to inspectable evidence.
+
+The operating principle is:
+
+`Learn → Build → Test → Document → Prove → Share → Iterate`
+
+## Current stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Static export
+- GitHub Pages
+- GitHub Actions
+
+## Repository structure
+
+- `src/` — portfolio application source.
+- `public/` — static public assets.
+- `proofs/` — evidence records published by the portfolio.
+- `docs/` — documentation index and factual project status.
+- `.github/workflows/` — deployment and proof CI.
+
+## Local development
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+The production build is configured as a static export.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+`next.config.ts` uses:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `output: "export"`
+- `basePath: "/Portfolio-ai"`
+- trailing slashes for static hosting
 
-## Deploy on Vercel
+Deployment is automated through GitHub Actions and GitHub Pages.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Evidence model
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The portfolio does not create proof on behalf of other projects. A public technical claim should point back to its originating repository, commit, test, CI run, artifact or checksum.
+
+See [docs/README.md](docs/README.md) and [docs/PROJECT-STATUS.md](docs/PROJECT-STATUS.md).
+
+## Status
+
+Active public portfolio. Current deployment and proof-workflow status is tracked in `docs/PROJECT-STATUS.md`.
