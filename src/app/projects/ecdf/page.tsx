@@ -6,7 +6,7 @@ export default function ECDFProjectPage() {
   return (
     <main className="min-h-screen bg-white px-6 py-16 text-black sm:px-10 lg:px-24">
       <div className="mx-auto max-w-5xl">
-        <a href="/" className="text-sm underline underline-offset-4">
+        <a href="/Portfolio-ai/" className="text-sm underline underline-offset-4">
           ← Retour au portfolio
         </a>
 
