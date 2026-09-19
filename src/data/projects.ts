@@ -308,8 +308,8 @@ export const projects: ProjectEvidence[] = [
     sourceHref: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio",
     verifiedScope: [
       "Next.js static export is configured for GitHub Pages at /open-technologies-portfolio.",
-      "Pre-normalization main fbf5d86fe2802b52323a98e4ea2ec7ce063fd3e0 passed Portfolio CI run 35454286768.",
-      "Pre-normalization deployment run 35454286762 and Pages build run 35454314210 completed successfully.",
+      "Normalization merge 417a88818abb4d5cce3a8f5916f43f7c1c792dbf passed Portfolio CI run 35467213697.",
+      "Normalization deployment run 35467213730 and Pages build/deployment run 35467240173 completed successfully.",
       "The unified evidence index presents exactly seven authorized projects.",
     ],
     evidence: [
@@ -322,16 +322,16 @@ export const projects: ProjectEvidence[] = [
         href: "https://emeraude-kiangana.github.io/open-technologies-portfolio/",
       },
       {
-        label: "Portfolio CI 35454286768",
-        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35454286768",
+        label: "Portfolio CI 35467213697",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35467213697",
       },
       {
-        label: "Deploy run 35454286762",
-        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35454286762",
+        label: "Deploy run 35467213730",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35467213730",
       },
       {
-        label: "Pages run 35454314210",
-        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35454314210",
+        label: "Pages run 35467240173",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35467240173",
       },
       {
         label: "Project status",
