@@ -8,7 +8,7 @@ Public evidence index for technical projects built, tested and documented by Eme
 - Phase: **PUBLIC EVIDENCE HUB**
 - Application version: \`0.1.0\`
 - Repository: **PUBLIC**
-- GitHub Pages: configured at https://emeraude-kiangana.github.io/open-technologies-portfolio/
+- Live Portfolio: https://emeraude-kiangana.github.io/open-technologies-portfolio/
 - License: **No license currently granted**
 - Last project-evidence synchronization: **2026-09-19**
 
