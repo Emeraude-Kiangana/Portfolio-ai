@@ -217,7 +217,7 @@ export const projects: ProjectEvidence[] = [
         note: "Functional reproducibility; not bit-for-bit media determinism.",
       },
     ],
-    publicEvidenceStatus: ["PARTIAL", "PRIVATE SOURCE"],
+    publicEvidenceStatus: ["PARTIAL", "PRIVATE SOURCE", "UNKNOWN"],
     sourceVisibility: "PRIVATE",
     version: "v0.1.0-alpha",
     demo: "PUBLIC PROOF PACKAGE · HTTP STATUS UNKNOWN",
@@ -355,7 +355,8 @@ export const projects: ProjectEvidence[] = [
     verifiedScope: [
       "Next.js static export is configured for GitHub Pages at /open-technologies-portfolio.",
       "P01-CP-HUB-02 remains historical proof at merge 1b7274847d61a097155dc98e2377d58afd5e5c13.",
-      "The normalization-correction pass is gated by current-main Portfolio CI, GitHub Pages deploy and Pages build/deployment before final PASS.",
+      "Pre-resync main f42ea82913920285f443548d8f962cf07e5b2fbd has Portfolio CI 35468351208, Deploy 35468351198 and Pages build 35468391017 all SUCCESS.",
+      "Final resynchronization evidence is defined by the newer post-merge Actions history; no pre-merge run is treated as the final correction proof.",
       "The unified evidence index presents exactly seven authorized projects.",
     ],
     evidence: [
