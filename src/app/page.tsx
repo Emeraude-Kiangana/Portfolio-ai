@@ -107,6 +107,17 @@ export default function Home() {
                         </span>
                       ))}
                     </dd>
+                    {project.statusBreakdown ? (
+                      <div className="mt-3 space-y-2 text-xs leading-5 text-gray-600">
+                        {project.statusBreakdown.map((item) => (
+                          <p key={item.label}>
+                            <span className="font-semibold text-gray-800">{item.label}:</span>{" "}
+                            {item.statuses.join(" · ")}
+                            {item.note ? ` — ${item.note}` : ""}
+                          </p>
+                        ))}
+                      </div>
+                    ) : null}
                   </div>
 
                   <div>
@@ -137,6 +148,15 @@ export default function Home() {
                       Demo
                     </dt>
                     <dd className="mt-2 text-sm leading-6 text-gray-700">{project.demo}</dd>
+                  </div>
+
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-gray-500">
+                      Visibilité source
+                    </dt>
+                    <dd className="mt-2 text-sm font-semibold leading-6 text-gray-700">
+                      {project.sourceVisibility}
+                    </dd>
                   </div>
 
                   <div>
