@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Open Technologies Portfolio — Emeraude Kiangana",
   description:
-    "Public evidence index for documented, implemented and tested technical projects.",
+    "Public evidence index for documented, implemented, tested and reproducible Open Technologies projects.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

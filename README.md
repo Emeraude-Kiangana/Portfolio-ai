@@ -1,66 +1,130 @@
 # Emeraude Kiangana — Open Technologies Portfolio
 
-Public evidence portfolio for technology projects, experiments and reproducible engineering work.
+Public evidence index for technical projects built, tested and documented by Emeraude Kiangana.
+
+## Status
+
+- Product: **P01 — Open Technologies Portfolio**
+- Phase: **PUBLIC EVIDENCE HUB**
+- Application version: \`0.1.0\`
+- Repository: **PUBLIC**
+- GitHub Pages: configured at https://emeraude-kiangana.github.io/open-technologies-portfolio/
+- License: **No license currently granted**
+- Last project-evidence synchronization: **2026-09-19**
+
+The Pages URL is configuration evidence until an external HTTP smoke test confirms anonymous reachability after the current normalization merge.
 
 ## Purpose
 
-This repository is the **presentation layer** for verified work. It is designed to show what was built, tested, documented and demonstrated, with links back to inspectable evidence.
+This repository is the public presentation layer for Open Technologies project evidence. It shows what source repositories actually demonstrate and keeps maturity separate from public inspectability.
 
-The operating principle is:
+Operating rule:
 
-`Learn → Build → Test → Document → Prove → Share → Iterate`
+\`Build → Test → Prove → Publish\`
 
-## Current stack
+P01 presents proofs. P01 does not create proofs for another project.
 
-- Next.js 16
-- React 19
+## Evidence model
+
+A public technical claim should resolve to an identifiable source such as:
+
+- originating repository;
+- commit;
+- GitHub Actions run;
+- test result;
+- release;
+- artifact;
+- checksum;
+- bounded field evidence;
+- public page.
+
+If the source project does not prove a claim, P01 must not claim it.
+
+The portfolio tracks two different dimensions:
+
+### Project maturity
+
+\`DOCUMENTED · IMPLEMENTED · TESTED · REPRODUCIBLE · PUBLIC · EXTERNALLY VALIDATED\`
+
+### Public evidence availability
+
+\`AVAILABLE · PARTIAL · PRIVATE SOURCE · UNKNOWN · BLOCKED\`
+
+A private source repository is not automatically a blocked project, and a public repository is not automatically licensed software.
+
+## Project index
+
+The unified public evidence index contains exactly:
+
+- CPCN;
+- eCDF;
+- KIANGANA 2.0 / KIF;
+- NovaForge;
+- RegenTwin;
+- RWA Red-Team Lab;
+- P01 — Open Technologies Portfolio.
+
+The application source of truth for normalized card data is \`src/data/projects.ts\`.
+
+## Stack
+
+- Next.js 16.3.4
+- React 19.2.8
 - TypeScript
+- Tailwind CSS 4
 - Static export
 - GitHub Pages
 - GitHub Actions
 
-## Repository structure
-
-- `src/` — portfolio application source.
-- `public/` — static public assets.
-- `proofs/` — evidence records published by the portfolio.
-- `docs/` — documentation index and factual project status.
-- `.github/workflows/` — deployment and proof CI.
-
 ## Local development
 
-```bash
+\`\`\`bash
 npm ci
 npm run dev
-```
+\`\`\`
 
-Open `http://localhost:3000`.
+Open \`http://localhost:3000\`.
 
 ## Verification
 
-```bash
+\`\`\`bash
+npm ci
 npm run lint
 npm run build
-```
+\`\`\`
 
-The production build is configured as a static export.
+The production build must generate the static export successfully before merge.
 
 ## Deployment
 
-`next.config.ts` uses:
+\`next.config.ts\` uses:
 
-- `output: "export"`
-- `basePath: "/open-technologies-portfolio"`
-- trailing slashes for static hosting
+- \`output: "export"\`
+- \`basePath: "/open-technologies-portfolio"\`
+- \`trailingSlash: true\`
 
-Deployment is automated through GitHub Actions and GitHub Pages.
+\`.github/workflows/deploy.yml\` builds \`./out\` and publishes it to GitHub Pages after pushes to \`main\`.
 
-## Evidence model
+## Limitations
 
-The portfolio does not create proof on behalf of other projects. A public technical claim should point back to its originating repository, commit, test, CI run, artifact or checksum.
+- P01 does not replace project repositories as technical sources of truth.
+- Private repositories remain private; P01 does not publish their private contents or participant data.
+- A public demo does not imply public source code.
+- A public repository does not imply an open-source license.
+- P01 is not classified \`REPRODUCIBLE\` without independent clean-reproduction evidence.
 
-See [docs/README.md](docs/README.md) and [docs/PROJECT-STATUS.md](docs/PROJECT-STATUS.md).
+## License
 
-## Status
+No root \`LICENSE\` file is present.
 
-Active public portfolio. Current deployment and proof-workflow status is tracked in `docs/PROJECT-STATUS.md`.
+**No license is currently granted by this repository.**
+
+Copyright is separate from licensing.
+
+## Author
+
+**Emeraude Kiangana**  
+Founder / Builder — Open Technologies  
+Democratic Republic of the Congo
+
+© EMERAUDE KIANGANA
