@@ -12,7 +12,7 @@ P01 is the public presentation layer for inspectable technical evidence. Source 
 
 `Emeraude-Kiangana/open-technologies-portfolio`
 
-The historical repository name `Portfolio-ai` is not an active canonical surface.
+The pre-normalization repository name is historical only and is not an active canonical surface.
 
 ## Current verified state
 
