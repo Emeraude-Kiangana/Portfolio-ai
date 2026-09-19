@@ -63,7 +63,7 @@ const projects: ProjectEvidence[] = [
       },
       {
         label: "Public P01 proof",
-        href: "/Portfolio-ai/projects/ecdf/",
+        href: "/open-technologies-portfolio/projects/ecdf/",
       },
     ],
     limitations: [
@@ -125,19 +125,19 @@ const projects: ProjectEvidence[] = [
     evidence: [
       {
         label: "Public P01 proof",
-        href: "/Portfolio-ai/projects/novaforge/",
+        href: "/open-technologies-portfolio/projects/novaforge/",
       },
       {
         label: "Published checksum",
-        href: "/Portfolio-ai/novaforge/SHA256SUMS.txt",
+        href: "/open-technologies-portfolio/novaforge/SHA256SUMS.txt",
       },
       {
         label: "Published MP4 artifact",
-        href: "/Portfolio-ai/novaforge/NovaForge-v0.1.0-alpha-demo.mp4",
+        href: "/open-technologies-portfolio/novaforge/NovaForge-v0.1.0-alpha-demo.mp4",
       },
       {
         label: "P01 publication commit",
-        href: "https://github.com/Emeraude-Kiangana/Portfolio-ai/commit/4cc3db78ff85873ffb6dcf92056a0ea18e35801d",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/commit/4cc3db78ff85873ffb6dcf92056a0ea18e35801d",
       },
     ],
     evidenceNote:
@@ -229,23 +229,23 @@ const projects: ProjectEvidence[] = [
     evidence: [
       {
         label: "Repository",
-        href: "https://github.com/Emeraude-Kiangana/Portfolio-ai",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio",
       },
       {
         label: "Public deployment",
-        href: "https://emeraude-kiangana.github.io/Portfolio-ai/",
+        href: "https://emeraude-kiangana.github.io/open-technologies-portfolio/",
       },
       {
         label: "Deploy run 35329321829",
-        href: "https://github.com/Emeraude-Kiangana/Portfolio-ai/actions/runs/35329321829",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35329321829",
       },
       {
         label: "Pages run 35329366172",
-        href: "https://github.com/Emeraude-Kiangana/Portfolio-ai/actions/runs/35329366172",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35329366172",
       },
       {
         label: "Project status",
-        href: "https://github.com/Emeraude-Kiangana/Portfolio-ai/blob/main/docs/PROJECT-STATUS.md",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/blob/main/docs/PROJECT-STATUS.md",
       },
     ],
     limitations: [
@@ -428,7 +428,7 @@ export default function Home() {
           </h2>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="https://github.com/Emeraude-Kiangana/Portfolio-ai"
+              href="https://github.com/Emeraude-Kiangana/open-technologies-portfolio"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-black px-4 py-2 font-medium text-white hover:bg-gray-800"
@@ -436,7 +436,7 @@ export default function Home() {
               Repository P01
             </a>
             <a
-              href="https://emeraude-kiangana.github.io/Portfolio-ai/"
+              href="https://emeraude-kiangana.github.io/open-technologies-portfolio/"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg border border-gray-300 px-4 py-2 font-medium hover:bg-gray-50"
@@ -444,13 +444,13 @@ export default function Home() {
               GitHub Pages
             </a>
             <a
-              href="/Portfolio-ai/projects/ecdf/"
+              href="/open-technologies-portfolio/projects/ecdf/"
               className="rounded-lg border border-gray-300 px-4 py-2 font-medium hover:bg-gray-50"
             >
               Preuve eCDF
             </a>
             <a
-              href="/Portfolio-ai/projects/novaforge/"
+              href="/open-technologies-portfolio/projects/novaforge/"
               className="rounded-lg border border-gray-300 px-4 py-2 font-medium hover:bg-gray-50"
             >
               Preuve NovaForge

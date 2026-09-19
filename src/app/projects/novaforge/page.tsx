@@ -2,13 +2,13 @@ export default function NovaForgeProjectPage() {
   const version = 'v0.1.0-alpha';
   const commit = '427a979a55be4faf965ab5fecfde267074974a96';
   const sha256 = '8510fbe5fbbfd4e8aca362dab2d5cf8f4f18f1d1f0565deb5baa5601c46a994d';
-  const videoUrl = '/Portfolio-ai/novaforge/NovaForge-v0.1.0-alpha-demo.mp4';
-  const checksumUrl = '/Portfolio-ai/novaforge/SHA256SUMS.txt';
+  const videoUrl = '/open-technologies-portfolio/novaforge/NovaForge-v0.1.0-alpha-demo.mp4';
+  const checksumUrl = '/open-technologies-portfolio/novaforge/SHA256SUMS.txt';
 
   return (
     <main className="min-h-screen bg-white px-6 py-16 text-black sm:px-10 lg:px-24">
       <div className="mx-auto max-w-5xl">
-        <a href="/Portfolio-ai/" className="text-sm underline underline-offset-4">
+        <a href="/open-technologies-portfolio/" className="text-sm underline underline-offset-4">
           ← Retour au portfolio
         </a>
 
