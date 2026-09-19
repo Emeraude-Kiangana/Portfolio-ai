@@ -18,9 +18,9 @@ P01 is the public presentation layer for inspectable technical evidence. Source 
 | Repository visibility | PUBLIC | GitHub repository metadata |
 | License | NONE | No root \`LICENSE\` file detected |
 | Unified Project Evidence Index | IMPLEMENTED | P01-CP-HUB-02 merge \`1b7274847d61a097155dc98e2377d58afd5e5c13\` |
-| Pre-normalization Portfolio CI | TESTED | Actions run \`35454286768\` = SUCCESS |
-| Pre-normalization Pages deploy | TESTED | Actions run \`35454286762\` = SUCCESS |
-| Pre-normalization Pages build | TESTED | Actions run \`35454314210\` = SUCCESS |
+| GitHub Product Normalization v1 Portfolio CI | TESTED | Actions run \`35467213697\` = SUCCESS |
+| GitHub Product Normalization v1 Pages deploy | TESTED | Actions run \`35467213730\` = SUCCESS |
+| GitHub Product Normalization v1 Pages build/deployment | TESTED | Actions run \`35467240173\` = SUCCESS |
 | Evidence-first model | DOCUMENTED | README, docs and normalized project data |
 | Project/evidence status separation | IMPLEMENTED | \`src/data/projects.ts\` + public index UI |
 
