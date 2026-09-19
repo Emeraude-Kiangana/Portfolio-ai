@@ -18,11 +18,19 @@ export type EvidenceLink = {
   href: string;
 };
 
+export type StatusBreakdown = {
+  label: string;
+  statuses: MaturityStatus[];
+  note?: string;
+};
+
 export type ProjectEvidence = {
   name: string;
   description: string;
   projectStatus: MaturityStatus[];
+  statusBreakdown?: StatusBreakdown[];
   publicEvidenceStatus: EvidenceAvailability[];
+  sourceVisibility: "PUBLIC" | "PRIVATE";
   version: string;
   demo: string;
   license: string;
@@ -41,7 +49,20 @@ export const projects: ProjectEvidence[] = [
     description:
       "Research prototypes for testing evidence and permission workflows around SME financing in the Democratic Republic of the Congo.",
     projectStatus: ["DOCUMENTED"],
-    publicEvidenceStatus: ["PRIVATE SOURCE", "PARTIAL"],
+    statusBreakdown: [
+      {
+        label: "CPCN global",
+        statuses: ["DOCUMENTED"],
+        note: "Gate 0 research and canonical project index.",
+      },
+      {
+        label: "CPCN-CP-G0-02 v0.1",
+        statuses: ["DOCUMENTED", "IMPLEMENTED", "TESTED"],
+        note: "Bounded simulator artifact; not a project-wide TESTED claim.",
+      },
+    ],
+    publicEvidenceStatus: ["PARTIAL", "PRIVATE SOURCE"],
+    sourceVisibility: "PRIVATE",
     version: "Gate 0 · G0-01/G0-02 v0.1",
     demo: "CONTROLLED FIELD PORTAL / LOCAL DEMO",
     license: "No license currently granted",
@@ -69,6 +90,7 @@ export const projects: ProjectEvidence[] = [
       "TypeScript research prototype for deterministic digital-value transfer experiments with a tested local transfer lifecycle.",
     projectStatus: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "PUBLIC"],
     publicEvidenceStatus: ["AVAILABLE"],
+    sourceVisibility: "PUBLIC",
     version: "0.1.0-alpha.0",
     demo: "NO PUBLIC DEMO",
     license: "Apache-2.0",
@@ -118,7 +140,20 @@ export const projects: ProjectEvidence[] = [
     description:
       "Human–AI operating system with governed mission execution; KIF V0.2 is tracked as a distinct historical checkpoint.",
     projectStatus: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "PUBLIC"],
-    publicEvidenceStatus: ["AVAILABLE", "PARTIAL"],
+    statusBreakdown: [
+      {
+        label: "KIANGANA 2.0 current main",
+        statuses: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "PUBLIC"],
+        note: "Canonical main is d3790d349e45d794bbb78d46fc1c48862c678151.",
+      },
+      {
+        label: "KIF V0.2 CP-01",
+        statuses: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "REPRODUCIBLE"],
+        note: "Historical CLOSED / FROZEN checkpoint; kif/ is not present on current main.",
+      },
+    ],
+    publicEvidenceStatus: ["AVAILABLE"],
+    sourceVisibility: "PUBLIC",
     version: "Global: no canonical release · KIF V0.2 CP-01",
     demo: "NO PUBLIC DEMO",
     license: "No license currently granted",
@@ -175,16 +210,24 @@ export const projects: ProjectEvidence[] = [
     description:
       "Reproducible media-production control plane for job orchestration, HTTP workers and FFmpeg-backed MP4 pipelines.",
     projectStatus: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "REPRODUCIBLE"],
-    publicEvidenceStatus: ["PRIVATE SOURCE", "PARTIAL"],
+    statusBreakdown: [
+      {
+        label: "NovaForge v0.1.0-alpha",
+        statuses: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "REPRODUCIBLE"],
+        note: "Functional reproducibility; not bit-for-bit media determinism.",
+      },
+    ],
+    publicEvidenceStatus: ["PARTIAL", "PRIVATE SOURCE"],
+    sourceVisibility: "PRIVATE",
     version: "v0.1.0-alpha",
-    demo: "PUBLIC PROOF PACKAGE — HTTP RECHECK REQUIRED",
+    demo: "PUBLIC PROOF PACKAGE · HTTP STATUS UNKNOWN",
     license: "No license currently granted",
     source: "PRIVATE — Emeraude-Kiangana/novaforge",
     verifiedScope: [
       "Job lifecycle, FIFO queueing, scheduling, HTTP worker dispatch, persistence and crash recovery.",
       "Real FFmpeg MP4 generation with ffprobe validation and SHA-256 provenance.",
       "Normalized main 74aa0bbbd7a9b4dceb0b987b27d2c670cac40903.",
-      "Main CI run 35464627769 passed 100 regression tests and 1 real FFmpeg E2E test.",
+      "Normalized main CI run 35464627769 is SUCCESS; reference release run 35241302604 records 100 regression tests and 1 real FFmpeg E2E test.",
       "Clean-clone functional reproduction is documented at fd4c7adc09a7178cd0babc630a4d6ae872d39395.",
     ],
     evidence: [
@@ -206,7 +249,7 @@ export const projects: ProjectEvidence[] = [
       },
     ],
     evidenceNote:
-      "Canonical source is private. The P01 proof package is publicly published in the portfolio repository, but anonymous GitHub Pages HTTP availability is not promoted to PASS until an external 2xx smoke test succeeds.",
+      "Canonical source is private. The MP4 and SHA256SUMS proof package is present in the public P01 repository. Anonymous GitHub Pages HTTP reachability is UNKNOWN because the available external clients could not complete DNS/HTTP verification.",
     limitations: [
       "No GPU inference, CogVideoX, RunPod, cloud video generation or production AI-video pipeline is demonstrated.",
       "Private source is not the same as public-source reproducibility.",
@@ -220,6 +263,7 @@ export const projects: ProjectEvidence[] = [
       "Git-native provenance prototype for deterministic state chains representing regenerative agricultural assets.",
     projectStatus: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "PUBLIC"],
     publicEvidenceStatus: ["AVAILABLE"],
+    sourceVisibility: "PUBLIC",
     version: "Gate 0 · no release version claimed",
     demo: "LOCAL DEMO",
     license: "No license file detected",
@@ -261,6 +305,7 @@ export const projects: ProjectEvidence[] = [
       "Adversarial verification lab for deterministic integrity checks against sample RWA evidence bundles.",
     projectStatus: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "PUBLIC"],
     publicEvidenceStatus: ["AVAILABLE"],
+    sourceVisibility: "PUBLIC",
     version: "Gate 0 · no release version claimed",
     demo: "LOCAL DEMO",
     license: "No license file detected",
@@ -301,15 +346,16 @@ export const projects: ProjectEvidence[] = [
       "Public evidence index for technical projects built, tested and documented by Emeraude Kiangana.",
     projectStatus: ["DOCUMENTED", "IMPLEMENTED", "TESTED", "PUBLIC"],
     publicEvidenceStatus: ["AVAILABLE"],
+    sourceVisibility: "PUBLIC",
     version: "0.1.0",
-    demo: "PUBLIC PORTFOLIO",
+    demo: "PUBLIC PORTFOLIO · HTTP STATUS UNKNOWN",
     license: "No license currently granted",
     source: "Emeraude-Kiangana/open-technologies-portfolio",
     sourceHref: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio",
     verifiedScope: [
       "Next.js static export is configured for GitHub Pages at /open-technologies-portfolio.",
-      "Normalization merge 417a88818abb4d5cce3a8f5916f43f7c1c792dbf passed Portfolio CI run 35467213697.",
-      "Normalization deployment run 35467213730 and Pages build/deployment run 35467240173 completed successfully.",
+      "P01-CP-HUB-02 remains historical proof at merge 1b7274847d61a097155dc98e2377d58afd5e5c13.",
+      "The normalization-correction pass is gated by current-main Portfolio CI, GitHub Pages deploy and Pages build/deployment before final PASS.",
       "The unified evidence index presents exactly seven authorized projects.",
     ],
     evidence: [
@@ -322,16 +368,16 @@ export const projects: ProjectEvidence[] = [
         href: "https://emeraude-kiangana.github.io/open-technologies-portfolio/",
       },
       {
-        label: "Portfolio CI 35467213697",
-        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35467213697",
+        label: "Portfolio CI workflow",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/workflows/portfolio-ci.yml",
       },
       {
-        label: "Deploy run 35467213730",
-        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35467213730",
+        label: "Deploy workflow",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/workflows/deploy.yml",
       },
       {
-        label: "Pages run 35467240173",
-        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions/runs/35467240173",
+        label: "GitHub Actions",
+        href: "https://github.com/Emeraude-Kiangana/open-technologies-portfolio/actions",
       },
       {
         label: "Project status",
@@ -342,6 +388,7 @@ export const projects: ProjectEvidence[] = [
       "P01 presents evidence; it does not create proof for another project.",
       "No independent clean reproduction is recorded, so P01 is not classified REPRODUCIBLE.",
       "Repository visibility does not imply an open-source license.",
+      "Anonymous GitHub Pages HTTP reachability is UNKNOWN in the current execution environment; deployment success is tracked separately.",
     ],
     lastVerified: "2026-09-19",
   },
