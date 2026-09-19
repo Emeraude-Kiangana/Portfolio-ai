@@ -1,12 +1,21 @@
-const repoUrl = 'https://github.com/Emeraude-Kiangana/ecdf';
-const checkpointSha = '34814b06ae28fe5e3a62b9866cb9781332312b7b';
-const checkpointUrl = `${repoUrl}/commit/${checkpointSha}`;
+const repoUrl = "https://github.com/Emeraude-Kiangana/ecdf";
+const normalizedMain = "c3a82329bdcd339a99595b64ea3a3dd4ee3adefa";
+const foundationSha = "34814b06ae28fe5e3a62b9866cb9781332312b7b";
+const normalizedCi = "35463718531";
 
 export default function ECDFProjectPage() {
+  const statusUrl = repoUrl + "/blob/main/docs/PROJECT-STATUS.md";
+  const normalizedMainUrl = repoUrl + "/commit/" + normalizedMain;
+  const foundationUrl = repoUrl + "/commit/" + foundationSha;
+  const ciUrl = repoUrl + "/actions/runs/" + normalizedCi;
+
   return (
     <main className="min-h-screen bg-white px-6 py-16 text-black sm:px-10 lg:px-24">
       <div className="mx-auto max-w-5xl">
-        <a href="/open-technologies-portfolio/" className="text-sm underline underline-offset-4">
+        <a
+          href="/open-technologies-portfolio/"
+          className="text-sm underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2"
+        >
           ← Retour au portfolio
         </a>
 
@@ -16,69 +25,76 @@ export default function ECDFProjectPage() {
           </p>
           <h1 className="mt-3 text-5xl font-bold tracking-tight">eCDF</h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-gray-700">
-            Prototype de recherche technologique qui étudie comment un transfert de valeur de test,
-            modélisé comme une machine à états explicite, peut produire un résultat vérifiable et
-            reproductible avant toute intégration réseau ou usage financier réel.
+            Prototype TypeScript de recherche pour expérimenter un cycle local de transfert de
+            valeur explicite, déterministe et testable avant toute intégration de règlement réseau.
           </p>
         </header>
 
-        <section className="grid gap-4 py-10 sm:grid-cols-3">
+        <section className="grid gap-4 py-10 sm:grid-cols-4">
           <div className="rounded-xl border border-gray-200 p-5">
             <p className="text-sm text-gray-500">Statut</p>
-            <p className="mt-2 text-xl font-semibold">Research Prototype v0.1</p>
+            <p className="mt-2 text-xl font-semibold">TESTED · PUBLIC</p>
           </div>
           <div className="rounded-xl border border-gray-200 p-5">
-            <p className="text-sm text-gray-500">Checkpoint validé</p>
-            <p className="mt-2 text-xl font-semibold">27 / 27 tests</p>
+            <p className="text-sm text-gray-500">Version</p>
+            <p className="mt-2 text-xl font-semibold">0.1.0-alpha.0</p>
           </div>
           <div className="rounded-xl border border-gray-200 p-5">
-            <p className="text-sm text-gray-500">Référence Git</p>
-            <p className="mt-2 break-all font-mono text-sm">34814b06ae28</p>
+            <p className="text-sm text-gray-500">Tests</p>
+            <p className="mt-2 text-xl font-semibold">27 / 27 PASS</p>
+          </div>
+          <div className="rounded-xl border border-gray-200 p-5">
+            <p className="text-sm text-gray-500">Demo</p>
+            <p className="mt-2 text-xl font-semibold">No public demo</p>
           </div>
         </section>
 
         <section className="border-t border-gray-200 py-10">
           <h2 className="text-2xl font-bold">Ce qui est réellement démontré</h2>
           <ul className="mt-5 space-y-3 text-gray-700">
-            <li>• Fondation TypeScript/npm exécutable pour le prototype eCDF.</li>
-            <li>• Modèle de domaine local et déterministe pour les opérations de transfert.</li>
-            <li>• Invariants, transitions d’état, rôles, déduplication locale et snapshots déterministes.</li>
-            <li>• Checkpoint validé avec 27 tests sur 27 au vert.</li>
-            <li>• Artefact public reproductible à partir du commit de référence ci-dessous.</li>
+            <li>• Fondation TypeScript/npm exécutable et publiquement inspectable.</li>
+            <li>• Modèle local de transfert avec états explicites, rôles et invariants.</li>
+            <li>• Montants exacts en bigint, rejet d’événements dupliqués et snapshots déterministes.</li>
+            <li>• 27 tests sur 27 au vert sur le run normalisé {normalizedCi}.</li>
+            <li>• Main normalisé : {normalizedMain}.</li>
           </ul>
         </section>
 
         <section className="border-t border-gray-200 py-10">
-          <h2 className="text-2xl font-bold">Limites du checkpoint</h2>
-          <p className="mt-4 max-w-3xl leading-7 text-gray-700">
-            Cette preuve ne démontre pas encore un paiement Stellar exécuté, une intégration Testnet,
-            une infrastructure de production, une conformité réglementaire ou un produit financier.
-            Elle démontre uniquement l’état technique local validé du prototype au checkpoint indiqué.
-          </p>
+          <h2 className="text-2xl font-bold">Preuves vérifiables</h2>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a href={repoUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-black px-5 py-3 text-center font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+              Repository
+            </a>
+            <a href={statusUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gray-300 px-5 py-3 text-center font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+              Project Status
+            </a>
+            <a href={normalizedMainUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gray-300 px-5 py-3 text-center font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+              Normalized main
+            </a>
+            <a href={ciUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gray-300 px-5 py-3 text-center font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+              CI {normalizedCi}
+            </a>
+            <a href={foundationUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-gray-300 px-5 py-3 text-center font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2">
+              Foundation commit
+            </a>
+          </div>
         </section>
 
         <section className="border-t border-gray-200 py-10">
-          <h2 className="text-2xl font-bold">Preuves vérifiables</h2>
-          <div className="mt-6 flex flex-col gap-4 sm:flex-row">
-            <a
-              href={checkpointUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-black px-5 py-3 text-center font-medium text-white hover:bg-gray-800"
-            >
-              Voir le commit de référence
-            </a>
-            <a
-              href={repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg border border-gray-300 px-5 py-3 text-center font-medium hover:bg-gray-50"
-            >
-              Ouvrir le dépôt public eCDF
-            </a>
-          </div>
-          <p className="mt-5 break-all font-mono text-sm text-gray-500">{checkpointSha}</p>
+          <h2 className="text-2xl font-bold">Limites</h2>
+          <ul className="mt-5 space-y-3 text-gray-700">
+            <li>• Aucun adaptateur de règlement Stellar live ni flux RPC/Testnet implémenté.</li>
+            <li>• Aucun Mainnet, fonds réels, custody, KYC de production ou intégration mobile money.</li>
+            <li>• Aucun backing CDF, statut de CBDC, banque ou monnaie officielle.</li>
+            <li>• Aucune approbation réglementaire, validation marché ou validation externe.</li>
+            <li>• Aucun clean reproduction indépendant n’est enregistré ; REPRODUCIBLE n’est pas revendiqué.</li>
+          </ul>
         </section>
+
+        <footer className="border-t border-gray-200 py-8 text-sm text-gray-500">
+          Last verified: 2026-09-19 · License: Apache-2.0
+        </footer>
       </div>
     </main>
   );
