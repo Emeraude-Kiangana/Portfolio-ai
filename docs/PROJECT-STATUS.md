@@ -26,8 +26,9 @@ The pre-normalization repository name is historical only and is not an active ca
 | Unified Project Evidence Index | IMPLEMENTED | Historical P01-CP-HUB-02 merge `1b7274847d61a097155dc98e2377d58afd5e5c13` |
 | Project/evidence status separation | IMPLEMENTED | `src/data/projects.ts` + public index UI |
 | Source visibility separation | IMPLEMENTED | Explicit `PUBLIC` / `PRIVATE` field on every card |
-| Portfolio CI workflow | TESTED | `.github/workflows/portfolio-ci.yml`; final correction run must be SUCCESS before PASS |
-| GitHub Pages deploy workflow | TESTED | `.github/workflows/deploy.yml`; final correction run must be SUCCESS before PASS |
+| Portfolio CI workflow | TESTED | Pre-resync main run `35468351208` = SUCCESS; final correction requires a newer post-merge SUCCESS |
+| GitHub Pages deploy workflow | TESTED | Pre-resync deploy run `35468351198` = SUCCESS; final correction requires a newer post-merge SUCCESS |
+| Pages build/deployment | TESTED | Pre-resync Pages run `35468391017` = SUCCESS; final correction requires a newer post-merge SUCCESS |
 | Anonymous HTTP reachability | UNKNOWN | External clients could not complete GitHub Pages DNS/HTTP verification in this execution environment |
 
 ## Evidence model
@@ -77,7 +78,7 @@ The current normalization correction does **not** recreate HUB-02 and does not p
 | NovaForge | private `main@74aa0bbbd7a9b4dceb0b987b27d2c670cac40903`; main CI `35464627769` SUCCESS | `REPRODUCIBLE`; v0.1.0-alpha; 100/100 regression + 1/1 E2E on reference release CI; public P01 proof assets exist; anonymous HTTP status UNKNOWN |
 | RegenTwin | public `main@fadf386ed5c62dcd45a66008e8b2989b6402b63f`; CI `35324672286` SUCCESS | `TESTED` Gate 0; 4 tests; no release version claimed; no license file detected |
 | RWA Red-Team Lab | public `main@922291ca7076ed871f70d6c70623c7b61541297e`; CI `35327731335` SUCCESS | `TESTED` deterministic Gate 0 verifier; 4 tests; no release version claimed; no license file detected |
-| P01 | public pre-correction `main@92c59499790ef3cd99f45ad19dbf675c650036b0` | Correction final state is accepted only after current PR CI, merge, deploy and Pages runs succeed |
+| P01 | public pre-resync `main@f42ea82913920285f443548d8f962cf07e5b2fbd` | Final state is accepted only after current PR CI, merge, deploy and Pages runs succeed |
 
 ## CPCN boundary
 
@@ -118,15 +119,17 @@ The public P01 repository contains:
 
 This proves the public **source package is present in P01**. It does not establish anonymous GitHub Pages HTTP reachability when the external HTTP client cannot complete the request.
 
-## P01 historical pre-correction baseline
+## P01 pre-resync baseline
 
-These runs were the latest successful P01 runs before this correction branch was created:
+The correction branch starts from public `main@f42ea82913920285f443548d8f962cf07e5b2fbd`.
 
-- Portfolio CI `35467433107` — SUCCESS;
-- Deploy to GitHub Pages `35467433129` — SUCCESS;
-- Pages build/deployment `35467461940` — SUCCESS.
+Latest successful runs before this resynchronization branch:
 
-They remain historical baseline evidence after the correction merge. They are not presented as the final post-correction runs.
+- Portfolio CI `35468351208` — SUCCESS;
+- Deploy to GitHub Pages `35468351198` — SUCCESS;
+- Pages build/deployment `35468391017` — SUCCESS.
+
+These runs remain baseline evidence only. The final correction evidence must come from newer post-merge runs.
 
 ## Repository metadata gaps
 
@@ -143,7 +146,7 @@ The connected GitHub tool does not expose repository-description/topic mutation.
 
 **NOT FORMALLY DEFINED**
 
-This normalization correction creates no new P01 checkpoint.
+This resynchronization creates no new P01 checkpoint.
 
 ## Project rule
 
